@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="hojaEstilos.xslt"?>
+<Coleccion>
+	<documento>
+		<titulo>El Titulo</titulo>
+		<autor>Miguel S. Mendoza</autor>
+		<fecha>1984</fecha>
+	</documento>
+	<documento>
+		<titulo>El Otro Titulo</titulo>
+		<autor>Marta S. Román</autor>
+		<fecha>2016</fecha>
+	</documento>
+</Coleccion>
