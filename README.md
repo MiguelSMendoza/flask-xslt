@@ -20,9 +20,10 @@ Tanto los documentos XML como las hojas de estilo en XSLT son completamente inde
 
 Sin embargo, si lo que queremos es generar documentos independientes es necesario utilizar un procesador XSLT que se encargue de aplicar al documento XML las reglas de transformación incluidas en la hoja de estilo XSLT y genere un documento final. La transformación se realiza de la siguiente forma:
 
-El procesador analiza el documento y construye el árbol del documento.
-El procesador recorre todos los nodos desde el nodo raíz, aplicando a cada nodo una plantilla, sustituyendo el nodo por el resultado.
-Cuando el procesador ha recorrido todos los nodos, se ha terminado la transformación.
+ 1. El procesador analiza el documento y construye el árbol del documento.
+ 2. El procesador recorre todos los nodos desde el nodo raíz, aplicando a cada nodo una plantilla, sustituyendo el nodo por el resultado.
+ 3. Cuando el procesador ha recorrido todos los nodos, se ha terminado la transformación.
+ 
 Afortunadamente existen procesadores XSLT para casi todos los lenguajes de programación, como Perl, C, Java, etc. En nuestro caso hemos optado por implementar el procesador haciendo uso del lenguaje Python y su librería libxml.
 ## Python
 Python es un lenguaje muy potente y fácil de aprender. Maneja eficientes estructuras de datos de alto nivel y cuenta con un enfoque simple pero efectivo de programación orientada a objetos. Posee una sintaxis muy elegante y tipado dinámico, que junto con su carácter interpretado lo convierte en un lenguaje ideal para desarrollo rápido de aplicaciones en innumerables áreas. Python se encuentra en un gran número de aplicaciones web y de escritorio, por lo que es un lenguaje de aprendizaje casi obligatorio para un desarrollador actual, ya que permite resolver problemas de una forma muy eficiente en un corto espacio de tiempo. Además, cuenta con un repositorio de paquetes que permiten extender la funcionalidad de las aplicaciones de una forma sencilla, muy similar a como se hace con NodeJS.
@@ -77,7 +78,9 @@ Como podemos observar, aunque no hayamos visto el lenguaje Python hasta ahora, s
       </xsl:template>
     </xsl:stylesheet>
 
-Así, si abriéramos el fichero XML en un navegador obtendríamos un resultado parecido al que podemos observar en la siguiente captura.
+Así, si abriéramos el fichero XML en un navegador obtendríamos un resultado parecido al que podemos observar en la siguiente captura:
+
+![Transformación XSLT de documento XML a contenido HTML](https://www.smendoza.net/wp-content/uploads/XSLT-Transformacion.png)
 
 Python puede instalarse en cualquier sistema operativo actual. Sin embargo, si queremos utilizar código en este lenguaje desde un entorno web se hace necesario utilizar una infraestructura apropiada que permita desarrollar aplicaciones web o servicios sin necesidad de manejar detalles de bajo nivel como protocolos o manejo de procesos e hilos.
 
