@@ -1,6 +1,6 @@
-#Transformaciones XSLT con Python y Flask
+# Transformaciones XSLT con Python y Flask
 En el artículo [Transformaciones con XSLT](https://www.smendoza.net/transformaciones-con-xslt/) vimos una introducción al lenguaje de transformaciones, sin embargo, no explicamos como utilizar debidamente esta tecnología. En este artículo explicaremos como realizar transformaciones XSLT en Python haciendo uso de la biblioteca lxml y veremos como montar un servidor web con Flask para hacer uso de nuestro procesador XSLT desde cualquier lugar.
-##Introducción
+## Introducción
 Tanto los documentos XML como las hojas de estilo en XSLT son completamente independientes de la plataforma que se vaya a utilizar para realizar las transformaciones. Podemos enlazar una hoja de estilos XSLT a un documento XML de forma permanente añadiendo un elemento `<?xml-stylesheet ..?>` justo después de la declaración XML como podemos ver en el Fragmento de Código 1. De esta forma, al abrir el documento con un navegador web, éste aplicará las transformaciones pertinentes de forma automática y podremos comprobar el resultado.
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -24,7 +24,7 @@ El procesador analiza el documento y construye el árbol del documento.
 El procesador recorre todos los nodos desde el nodo raíz, aplicando a cada nodo una plantilla, sustituyendo el nodo por el resultado.
 Cuando el procesador ha recorrido todos los nodos, se ha terminado la transformación.
 Afortunadamente existen procesadores XSLT para casi todos los lenguajes de programación, como Perl, C, Java, etc. En nuestro caso hemos optado por implementar el procesador haciendo uso del lenguaje Python y su librería libxml.
-##Python
+## Python
 Python es un lenguaje muy potente y fácil de aprender. Maneja eficientes estructuras de datos de alto nivel y cuenta con un enfoque simple pero efectivo de programación orientada a objetos. Posee una sintaxis muy elegante y tipado dinámico, que junto con su carácter interpretado lo convierte en un lenguaje ideal para desarrollo rápido de aplicaciones en innumerables áreas. Python se encuentra en un gran número de aplicaciones web y de escritorio, por lo que es un lenguaje de aprendizaje casi obligatorio para un desarrollador actual, ya que permite resolver problemas de una forma muy eficiente en un corto espacio de tiempo. Además, cuenta con un repositorio de paquetes que permiten extender la funcionalidad de las aplicaciones de una forma sencilla, muy similar a como se hace con NodeJS.
 
 El gestor de paquetes recomendado para Python se denomina pip, y se utiliza de un modo similar a npm o apt-get. Con él, podemos instalar el paquete lxml que nos permitirá procesar documentos XML y HTML de forma sencilla.
@@ -108,7 +108,7 @@ Para poder gestionar correctamente el servidor web, utilizamos las funciones ren
         <input type="submit" value="Transformar" />
     </form>
 
-##Conclusión
+## Conclusión
 Utilizar Flask nos permitirá, entre otras cosas, poder mejorar la modularidad de un sistema en diferentes máquinas en caso de que fuera necesario, es decir, podríamos perfectamente instalar nuestro servicio de transformaciones en un servidor, y la aplicación web que utilice éste en otro distinto. Sin embargo, si quisiéramos utilizar tanto Flask como NodeJS en una misma máquina tendremos que utilizar aplicaciones intermedias como Virtual Environment  para mantener la aplicación Flask ejecutándose como servicio, uWSGI como interfaz web entre servidores web y el servicio creado con Virtual Environment y NGINX como servidor web para controlar todas las peticiones entre la aplicación web y el servicio de transformaciones en Python.
 
 Artículo Original: [SMendoza](https://www.smendoza.net/xslt-python-lxml/)
